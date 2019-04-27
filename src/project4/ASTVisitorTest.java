@@ -12,41 +12,29 @@ import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
-//import org.eclipse.equinox.*;
-
 
 public class ASTVisitorTest extends ASTVisitor {
-	public ASTVisitorTest() {
-		System.out.println("oh baby");
-		parseOrSum("yes.txt");
-	}
+	private CompilationUnit cu;
 	
-	public static void parseOrSum(String filename) {
-		ASTParser parser = ASTParser.newParser(AST.JLS3);
-		parser.setSource(filename.toCharArray());
-//		 Map options = JavaCore.getOptions();
-//		 JavaCore.setComplianceOptions(JavaCore.VERSION_1_5, options);
-//		 parser.setCompilerOptions(options);
-		final CompilationUnit cu =	 (CompilationUnit)parser.createAST(null);
-		 cu.accept(new ASTVisitor() {
-			 
-				Set names = new HashSet();
+	public ASTVisitorTest(CompilationUnit cu) {
+		this.cu = cu;
+//		Parser.parse("");
+	}
+	Set names = new HashSet();
 	 
-				public boolean visit(VariableDeclarationFragment node) {
-					SimpleName name = node.getName();
-					this.names.add(name.getIdentifier());
-					System.out.println("Declaration of '" + name + "' at line"
-							+ cu.getLineNumber(name.getStartPosition()));
-					return false; // do not continue 
-				}
-	 
-				public boolean visit(SimpleName node) {
-					if (this.names.contains(node.getIdentifier())) {
-						System.out.println("Usage of '" + node + "' at line "
-								+ cu.getLineNumber(node.getStartPosition()));
-					}
-					return true;
-				}
-			});
+	public boolean visit(VariableDeclarationFragment node) {
+		SimpleName name = node.getName();
+		this.names.add(name.getIdentifier());
+		System.out.println("Declaration of '" + name + "' at line"
+				+ cu.getLineNumber(name.getStartPosition()));
+		return false; // do not continue 
+			}
+ 
+	public boolean visit(SimpleName node) {
+		if (this.names.contains(node.getIdentifier())) {
+			System.out.println("Usage of '" + node + "' at line "
+			+ cu.getLineNumber(node.getStartPosition()));
+		}
+		return true;
 	}
 }

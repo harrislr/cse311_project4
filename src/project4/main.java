@@ -7,7 +7,8 @@ public class main {
 
 	public static void main(String[] args) {
 		System.out.println("yes");
-		ASTVisitorTest test = new ASTVisitorTest();
+//		ASTVisitorTest test = new ASTVisitorTest();
+		Parser.parse("");
 	}
 
 }
