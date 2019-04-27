@@ -1,5 +1,10 @@
 package project4;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +20,22 @@ public class Parser {
 	public static void parse(String filename) {
 		ASTParser parser = ASTParser.newParser(AST.JLS3);
 		parser.setSource(filename.toCharArray());
-		final CompilationUnit cu =	 (CompilationUnit)parser.createAST(null);
-		cu.accept(new ASTVisitorTest(cu));
+		final CompilationUnit cu = (CompilationUnit)parser.createAST(null);
+		cu.accept(new Visitor(cu));
+	}
+	
+	public static String readFromFile(String filename) throws IOException {
+		StringBuilder builder = new StringBuilder();
+		FileReader fReader = new FileReader(filename);
+		BufferedReader bReader = new BufferedReader(fReader);
+		String lineOfCode = bReader.readLine();
+		while (lineOfCode != null) {
+			builder.append(lineOfCode);
+			builder.append("\n");
+            lineOfCode = bReader.readLine();
+        }
+		bReader.close();
+		return builder.toString();
 	}
 	
 }
