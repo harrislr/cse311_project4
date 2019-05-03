@@ -1,16 +1,30 @@
-package project4;
+package Test;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+ 
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ForStatement;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
+import org.eclipse.jdt.core.dom.MethodRef;
+import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
+import org.eclipse.jdt.core.dom.WhileStatement;
 
 public class Visitor extends ASTVisitor {
 	private CompilationUnit cu;
@@ -28,7 +42,7 @@ public class Visitor extends ASTVisitor {
 		this.fileName = fileName;
 	}
 	
-	private Set<String> names = new HashSet<String>();
+	private Set names = new HashSet();
 	 
 	public boolean visit(Block node) {
 		blocks.add(node.toString());
@@ -89,23 +103,23 @@ public class Visitor extends ASTVisitor {
 		return this.fileName;
 	}
 	
-	public ArrayList<String> getBlocks() {
+	public ArrayList getBlocks() {
 		return this.blocks;
 	}
 	
-	public ArrayList<String> getMethodDeclaration() {
+	public ArrayList getMethodDeclaration() {
 		return this.methodDeclaration;
 	}
 	
-	public ArrayList<String> getMethodUsage() {
+	public ArrayList getMethodUsage() {
 		return this.methodUsage;
 	}
 	
-	public ArrayList<String> getVariableDeclaration() {
+	public ArrayList getVariableDeclaration() {
 		return this.variableDeclaration;
 	}
 	
-	public ArrayList<String> getVariableUsage() {
+	public ArrayList getVariableUsage() {
 		return this.variableUsage;
 	}
 	

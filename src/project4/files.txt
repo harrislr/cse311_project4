@@ -1,4 +1,4 @@
-Main.java
-Visitor.java
-Parser.java
-Parser - Copy.java
+src/project4/Main.java
+src/project4/Visitor.java
+src/project4/Parser.java
+src/Test/Parser.java

@@ -1,12 +1,9 @@
 package project4;
-import java.io.File;
 import java.io.IOException;
-import org.eclipse.jdt.core.dom.*;
 
 
 
 public class Main {
-
 	public static void main(String[] args) throws IOException {
 		StrategyTypeI strat = new StrategyTypeI();
 		strat.retrieveFiles("files.txt");
