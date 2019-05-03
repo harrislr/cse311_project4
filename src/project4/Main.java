@@ -10,13 +10,5 @@ public class Main {
 		strat.parseAST();
 		strat.getVisitors();
 		strat.compareFiles();
-//		StrategyBase.step1("src/project4/files.txt");
-//		String file = Parser.readFromFile("src/project4/Parser.java");
-//		VisitorBlock vis = Parser.parse(file);
-//		System.out.println(vis.getMethodDeclaration());
-//		System.out.println(vis.getMethodUsage());
-//		System.out.println(vis.getVariableDeclarations());
-//		System.out.println(vis.getVariableUsage());
-		
 	}
 }

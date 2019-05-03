@@ -18,7 +18,7 @@ public class Visitor extends ASTVisitor {
 	private String fileName;
 	private ArrayList<String> blocks = new ArrayList<String>();
 	private ArrayList<String> importDeclaration = new ArrayList<String>();
-	private ArrayList<String> methodDeclaration = new ArrayList<String>();
+	private ArrayList<String> methodSignatures = new ArrayList<String>();
 	private ArrayList<String> methodUsage = new ArrayList<String>();
 	private ArrayList<String> variableDeclaration = new ArrayList<String>();
 	private ArrayList<String> variableUsage = new ArrayList<String>();
@@ -67,8 +67,8 @@ public class Visitor extends ASTVisitor {
 //		return false;
 //	}
 	
-	public boolean visit(MethodDeclaration node) {
-		methodDeclaration.add("Line: " + (cu.getLineNumber(node.getStartPosition())) + ", Node: " + node.toString());
+	public boolean visit(MethodDeclaration node) {	
+		methodSignatures.add((node.toString().split("\\{"))[0]);
 		return true;
 	}
 	
@@ -93,8 +93,8 @@ public class Visitor extends ASTVisitor {
 		return this.blocks;
 	}
 	
-	public ArrayList<String> getMethodDeclaration() {
-		return this.methodDeclaration;
+	public ArrayList<String> getMethodSignature() {
+		return this.methodSignatures;
 	}
 	
 	public ArrayList<String> getMethodUsage() {
