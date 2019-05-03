@@ -108,5 +108,8 @@ public class Visitor extends ASTVisitor {
 	public ArrayList<String> getVariableUsage() {
 		return this.variableUsage;
 	}
-	
+	@Override
+	public String toString() {
+		return this.fileName;
+	}
 }

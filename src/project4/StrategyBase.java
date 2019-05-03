@@ -22,7 +22,7 @@ public abstract class StrategyBase {
 	}
 
 	public abstract void compareFiles();
-	public abstract void displayResults();
+	public abstract void displayResults(int f1, int f2);
 	
 	public ArrayList<String> getFiles() {
 		return files;

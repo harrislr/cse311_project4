@@ -9,7 +9,7 @@ public class Strategy_Type_III extends StrategyBase {
 	}
 
 	@Override
-	public void displayResults() {
+	public void displayResults(int f1, int f2) {
 		// TODO Auto-generated method stub
 		
 	}
