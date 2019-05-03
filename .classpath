@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/luteh/Documents/School/Spring 2019/CSE311/project4/lib/commons-collections-3.2.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/luteh/Documents/School/Spring 2019/CSE311/project4/lib/commons-configuration-1.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/luteh/Documents/School/Spring 2019/CSE311/project4/lib/commons-lang-2.5.jar"/>
@@ -14,5 +13,6 @@
 	<classpathentry kind="lib" path="C:/Users/luteh/Documents/School/Spring 2019/CSE311/project4/lib/org.eclipse.equinox.preferences_3.2.301.R35x_v20091117.jar"/>
 	<classpathentry kind="lib" path="C:/Users/luteh/Documents/School/Spring 2019/CSE311/project4/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
 	<classpathentry kind="lib" path="C:/Users/luteh/Documents/School/Spring 2019/CSE311/project4/lib/org.eclipse.osgi_3.5.2.R35x_v20100126.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
