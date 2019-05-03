@@ -35,11 +35,6 @@ public class Visitor extends ASTVisitor {
 		return true;
 	}
 	
-//	public boolean visit(CompilationUnit node) {
-//		System.out.println(node.getPackage().getName());
-//		return true;
-//	}
-	
 	public boolean visit(VariableDeclarationFragment node) {
 		SimpleName name = node.getName();
 		this.names.add(name.getIdentifier());
@@ -58,14 +53,7 @@ public class Visitor extends ASTVisitor {
 		importDeclaration.add("Line: " + (cu.getLineNumber(node.getStartPosition())) + ", Node: " + node.toString());
 		return true;
 	}
-	
-//	public boolean visit(WhileStatement node) {
-//		System.out.println(node.toString());
-//		ArrayList<Integer> al = new ArrayList<Integer>();
-//		al.add(node.getStartPosition());
-//		al.add(node.getLength());
-//		return false;
-//	}
+
 	
 	public boolean visit(MethodDeclaration node) {	
 		methodSignatures.add((node.toString().split("\\{"))[0]);
@@ -78,10 +66,6 @@ public class Visitor extends ASTVisitor {
 	}
 	
 	public boolean visit(ClassInstanceCreation node) {
-//		System.out.println(node);
-//		ArrayList<Integer> al = new ArrayList<Integer>();
-//		al.add(node.getStartPosition());
-//		al.add(node.getLength());
 		return true;
 	}
 	

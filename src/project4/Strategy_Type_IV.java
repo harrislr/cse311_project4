@@ -3,15 +3,10 @@ package project4;
 public class Strategy_Type_IV extends StrategyBase {
 
 	@Override
-	public void compareFiles() {
+	public boolean compareFiles(int f1, int f2) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
-	@Override
-	public void displayResults(int f1, int f2) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
